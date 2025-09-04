@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "browse": "Parcourir",
+    "create": "Créer un Article",
+    "profile": "Profil",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "language": "Langue"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "submit": "Soumettre",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "viewMore": "Voir Plus",
+    "readMore": "Lire Plus",
+    "noResults": "Aucun résultat trouvé",
+    "confirm": "Confirmer",
+    "success": "Succès !"
+  },
+  "home": {
+    "title": "Bienvenue sur BlogSpace",
+    "subtitle": "Découvrez des histoires incroyables et partagez vos pensées",
+    "featuredPosts": "Articles en Vedette",
+    "latestPosts": "Derniers Articles",
+    "trendingPosts": "Articles Tendances"
+  },
+  "blog": {
+    "title": "Articles de Blog",
+    "searchPlaceholder": "Rechercher des articles...",
+    "filterByCategory": "Filtrer par catégorie",
+    "sortBy": "Trier par",
+    "newest": "Plus Récents",
+    "oldest": "Plus Anciens",
+    "popular": "Plus Populaires",
+    "trending": "Tendances",
+    "readTime": "{{minutes}} min de lecture",
+    "publishedOn": "Publié le {{date}}",
+    "by": "par {{author}}",
+    "likes": "{{count}} j'aime",
+    "views": "{{count}} vues",
+    "comments": "{{count}} commentaires",
+    "tags": "Étiquettes",
+    "relatedPosts": "Articles Connexes"
+  },
+  "post": {
+    "createTitle": "Créer un Nouvel Article",
+    "editTitle": "Modifier l'Article",
+    "title": "Titre",
+    "content": "Contenu",
+    "excerpt": "Extrait",
+    "category": "Catégorie",
+    "tags": "Étiquettes",
+    "coverImage": "Image de Couverture",
+    "publish": "Publier",
+    "draft": "Enregistrer comme Brouillon",
+    "preview": "Aperçu",
+    "titlePlaceholder": "Entrez le titre de l'article...",
+    "contentPlaceholder": "Écrivez votre histoire...",
+    "excerptPlaceholder": "Brève description de votre article...",
+    "tagsPlaceholder": "Ajoutez des étiquettes séparées par des virgules"
+  },
+  "comments": {
+    "title": "Commentaires",
+    "addComment": "Ajouter un commentaire",
+    "placeholder": "Partagez vos pensées...",
+    "reply": "Répondre",
+    "noComments": "Aucun commentaire pour le moment. Soyez le premier à commenter !",
+    "loadMore": "Charger plus de commentaires"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "username": "Nom d'utilisateur",
+    "forgotPassword": "Mot de passe oublié ?",
+    "dontHaveAccount": "Vous n'avez pas de compte ?",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?"
+  },
+  "profile": {
+    "title": "Profil",
+    "edit": "Modifier le Profil",
+    "myPosts": "Mes Articles",
+    "bio": "Biographie",
+    "joinedOn": "Inscrit le {{date}}",
+    "postsCount": "{{count}} articles",
+    "followersCount": "{{count}} abonnés",
+    "followingCount": "{{count}} abonnements"
+  },
+  "validation": {
+    "required": "Ce champ est requis",
+    "email": "Veuillez entrer un email valide",
+    "minLength": "Doit contenir au moins {{min}} caractères",
+    "maxLength": "Ne doit pas dépasser {{max}} caractères",
+    "passwordMatch": "Les mots de passe doivent correspondre"
+  }
+}

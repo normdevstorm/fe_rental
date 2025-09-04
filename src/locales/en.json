@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "home": "Home",
+    "browse": "Browse",
+    "create": "Create Post",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout",
+    "language": "Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "viewMore": "View More",
+    "readMore": "Read More",
+    "noResults": "No results found",
+    "confirm": "Confirm",
+    "success": "Success!"
+  },
+  "home": {
+    "title": "Welcome to BlogSpace",
+    "subtitle": "Discover amazing stories and share your thoughts",
+    "featuredPosts": "Featured Posts",
+    "latestPosts": "Latest Posts",
+    "trendingPosts": "Trending Posts"
+  },
+  "blog": {
+    "title": "Blog Posts",
+    "searchPlaceholder": "Search articles...",
+    "filterByCategory": "Filter by category",
+    "sortBy": "Sort by",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "popular": "Most Popular",
+    "trending": "Trending",
+    "readTime": "{{minutes}} min read",
+    "publishedOn": "Published on {{date}}",
+    "by": "by {{author}}",
+    "likes": "{{count}} likes",
+    "views": "{{count}} views",
+    "comments": "{{count}} comments",
+    "tags": "Tags",
+    "relatedPosts": "Related Posts"
+  },
+  "post": {
+    "createTitle": "Create New Post",
+    "editTitle": "Edit Post",
+    "title": "Title",
+    "content": "Content",
+    "excerpt": "Excerpt",
+    "category": "Category",
+    "tags": "Tags",
+    "coverImage": "Cover Image",
+    "publish": "Publish",
+    "draft": "Save as Draft",
+    "preview": "Preview",
+    "titlePlaceholder": "Enter post title...",
+    "contentPlaceholder": "Write your story...",
+    "excerptPlaceholder": "Brief description of your post...",
+    "tagsPlaceholder": "Add tags separated by commas"
+  },
+  "comments": {
+    "title": "Comments",
+    "addComment": "Add a comment",
+    "placeholder": "Share your thoughts...",
+    "reply": "Reply",
+    "noComments": "No comments yet. Be the first to comment!",
+    "loadMore": "Load more comments"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "username": "Username",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?"
+  },
+  "profile": {
+    "title": "Profile",
+    "edit": "Edit Profile",
+    "myPosts": "My Posts",
+    "bio": "Bio",
+    "joinedOn": "Joined on {{date}}",
+    "postsCount": "{{count}} posts",
+    "followersCount": "{{count}} followers",
+    "followingCount": "{{count}} following"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email",
+    "minLength": "Must be at least {{min}} characters",
+    "maxLength": "Must be no more than {{max}} characters",
+    "passwordMatch": "Passwords must match"
+  }
+}

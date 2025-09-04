@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "browse": "Browse",
+    "create": "Tạo post",
+    "profile": "Hồ sơ",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "language": "Ngôn ngữ"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Có lỗi xảy ra",
+    "retry": "Thử lại",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "sort": "Sắp xếp",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "submit": "Gửi",
+    "back": "Trở về",
+    "next": "Tiếp theo",
+    "previous": "Trang trước",
+    "viewMore": "Xem thêm",
+    "readMore": "Đọc thêm",
+    "noResults": "Không có kết quả tìm thấy",
+    "confirm": "Xác nhận",
+    "success": "Thành công!"
+  },
+  "home": {
+    "title": "Chào mừng đến với BlogSpace",
+    "subtitle": "Khám phá những câu chuyện thú vị",
+    "featuredPosts": "Chuyên mục Posts",
+    "latestPosts": "Posts mới nhất",
+    "trendingPosts": "Posts thịnh hành"
+  },
+"blog": {
+    "title": "Bài viết Blog",
+    "searchPlaceholder": "Tìm kiếm bài viết...",
+    "filterByCategory": "Lọc theo danh mục",
+    "sortBy": "Sắp xếp theo",
+    "newest": "Mới nhất",
+    "oldest": "Cũ nhất",
+    "popular": "Phổ biến nhất",
+    "trending": "Thịnh hành",
+    "readTime": "{{minutes}} phút đọc",
+    "publishedOn": "Đăng vào ngày {{date}}",
+    "by": "bởi {{author}}",
+    "likes": "{{count}} lượt thích",
+    "views": "{{count}} lượt xem",
+    "comments": "{{count}} bình luận",
+    "tags": "Thẻ",
+    "relatedPosts": "Bài viết liên quan"
+},
+    "post": {
+        "createTitle": "Tạo Bài Viết Mới",
+        "editTitle": "Sửa Bài Viết",
+        "title": "Tiêu đề",
+        "content": "Nội dung",
+        "excerpt": "Tóm tắt",
+        "category": "Danh mục",
+        "tags": "Thẻ",
+        "coverImage": "Ảnh bìa",
+        "publish": "Xuất bản",
+        "draft": "Lưu nháp",
+        "preview": "Xem trước",
+        "titlePlaceholder": "Nhập tiêu đề bài viết...",
+        "contentPlaceholder": "Viết câu chuyện của bạn...",
+        "excerptPlaceholder": "Mô tả ngắn về bài viết của bạn...",
+        "tagsPlaceholder": "Thêm thẻ, ngăn cách bằng dấu phẩy"
+    },
+    "comments": {
+        "title": "Bình luận",
+        "addComment": "Thêm bình luận",
+        "placeholder": "Chia sẻ suy nghĩ của bạn...",
+        "reply": "Trả lời",
+        "noComments": "Chưa có bình luận nào. Hãy là người đầu tiên bình luận!",
+        "loadMore": "Tải thêm bình luận"
+    },
+    "auth": {
+        "login": "Đăng nhập",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "username": "Username",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?"
+  },
+  "profile": {
+    "title": "Profile",
+    "edit": "Edit Profile",
+    "myPosts": "My Posts",
+    "bio": "Bio",
+    "joinedOn": "Joined on {{date}}",
+    "postsCount": "{{count}} posts",
+    "followersCount": "{{count}} followers",
+    "followingCount": "{{count}} following"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email",
+    "minLength": "Must be at least {{min}} characters",
+    "maxLength": "Must be no more than {{max}} characters",
+    "passwordMatch": "Passwords must match"
+  }
+}
