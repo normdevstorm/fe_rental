@@ -41,7 +41,7 @@ class ItemApi {
     // Implementation to create a new item
     console.log("Creating item:", item);
     try {
-      const response = (await apiClient.post("/item", item))
+      const response = (await apiClient.post("/item/add", item))
         .data as ApiResponse<ItemResponseModel>;
       return response.data;
     } catch (error) {

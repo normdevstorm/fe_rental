@@ -11,6 +11,9 @@ import BlogCard from "../presentation/common/components/BlogCard";
 import type { BlogPost } from "../common/types/types";
 import { useBlogStore } from "../store/blogStore";
 import { itemApi } from "../data/item/api/item_api";
+import { toItemEntity } from "../data/item/model/item_response_model";
+import type { ItemEntity } from "../domain/item/entities/ItemEntity";
+import { itemUseCase } from "../domain/item/usecases/item_usecase";
 
 // Mock data for demo purposes
 const mockPosts: BlogPost[] = [
@@ -140,9 +143,36 @@ const HomePage: React.FC = () => {
   const fetchItems = async () => {
     try {
       const items = await itemApi.getAllItems();
-      console.log("Fetched items:", items.at(0)?.id);
+      const itemEntity = toItemEntity(items.at(0)!);
+      console.log("Fetched items:", new Date(itemEntity.createdAt));
     } catch (error) {
       console.error("Error fetching items:", error);
+    }
+  };
+
+  const createItem = async () => {
+    try {
+      const itemRequest: ItemEntity = {
+        name: "New Item",
+        description: "This is a new item",
+        price: 99.99,
+        createdAt: new Date().toISOString(),
+        id: "0",
+        updatedAt: new Date().toISOString(),
+        address: "123 Main St",
+        conditionRating: 5,
+        status: "AVAILABLE",
+        category: "ELECTRONICS",
+        latePrice: 10,
+        depositAmount: 20,
+        amount: 1,
+      };
+      const newItem = await itemUseCase.addItem(itemRequest);
+      if (newItem) {
+        console.log("Created item:", newItem);
+      }
+    } catch (error) {
+      console.error("Error creating item:", error);
     }
   };
 

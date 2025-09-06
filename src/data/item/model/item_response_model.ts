@@ -2,6 +2,7 @@ import type {
   AvailabilityStatusEnum,
   ItemCategoryEnum,
 } from "../../../common/types/enums";
+import type { ItemEntity } from "../../../domain/item/entities/ItemEntity";
 
 export interface ItemResponseModel {
   id: string;
@@ -19,4 +20,12 @@ export interface ItemResponseModel {
   isActive: boolean;
   createdAt: string;
   updatedAt: string;
+}
+
+// Converts ItemResponseModel to ItemEntity, here they are identical, we can manipulate if needed
+export function toItemEntity(response: ItemResponseModel): ItemEntity {
+  return {
+    ...response,
+    createdAt: new Date(response.createdAt),
+  };
 }
