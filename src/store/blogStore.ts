@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import type { BlogPost, SearchFilters } from '../types';
+import { create } from "zustand";
+import type { BlogPost, SearchFilters } from "../common/types/types";
 
 interface BlogState {
   posts: BlogPost[];

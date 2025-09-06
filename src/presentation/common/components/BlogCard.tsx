@@ -1,23 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { HeartIcon, EyeIcon, ChatBubbleLeftIcon, CalendarIcon } from '@heroicons/react/24/outline';
-import { HeartIcon as HeartSolid } from '@heroicons/react/24/solid';
-import type { BlogPost } from '../types';
-import { formatDateRelative, truncateText, formatNumber } from '../utils';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import {
+  HeartIcon,
+  EyeIcon,
+  ChatBubbleLeftIcon,
+  CalendarIcon,
+} from "@heroicons/react/24/outline";
+import { HeartIcon as HeartSolid } from "@heroicons/react/24/solid";
+import type { BlogPost } from "../../../common/types/types";
+import {
+  formatDateRelative,
+  truncateText,
+  formatNumber,
+} from "../../../common/utils";
 
 interface BlogCardProps {
   post: BlogPost;
   onLike?: (postId: string) => void;
   isLiked?: boolean;
-  variant?: 'default' | 'featured' | 'compact';
+  variant?: "default" | "featured" | "compact";
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ 
-  post, 
-  onLike, 
-  isLiked = false, 
-  variant = 'default' 
+const BlogCard: React.FC<BlogCardProps> = ({
+  post,
+  onLike,
+  isLiked = false,
+  variant = "default",
 }) => {
   const { t } = useTranslation();
 
@@ -27,7 +36,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
     onLike?.(post.id);
   };
 
-  if (variant === 'compact') {
+  if (variant === "compact") {
     return (
       <Link to={`/post/${post.slug}`} className="block group animate-fade-in">
         <article className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group-hover:border-primary-300 p-6">
@@ -47,16 +56,21 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 {post.title}
               </h3>
               <p className="text-sm text-gray-600 mb-4 font-semibold">
-                {t('blog.by', { author: post.author.username })} • {formatDateRelative(post.publishedAt || post.createdAt)}
+                {t("blog.by", { author: post.author.username })} •{" "}
+                {formatDateRelative(post.publishedAt || post.createdAt)}
               </p>
               <div className="flex items-center space-x-5 text-sm text-gray-500">
                 <span className="flex items-center space-x-2 group/like hover:text-red-500 transition-colors cursor-pointer">
                   <HeartIcon className="h-4 w-4 group-hover/like:scale-110 transition-transform" />
-                  <span className="font-semibold">{formatNumber(post.likes)}</span>
+                  <span className="font-semibold">
+                    {formatNumber(post.likes)}
+                  </span>
                 </span>
                 <span className="flex items-center space-x-2">
                   <EyeIcon className="h-4 w-4" />
-                  <span className="font-semibold">{formatNumber(post.views)}</span>
+                  <span className="font-semibold">
+                    {formatNumber(post.views)}
+                  </span>
                 </span>
               </div>
             </div>
@@ -66,7 +80,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
     );
   }
 
-  if (variant === 'featured') {
+  if (variant === "featured") {
     return (
       <Link to={`/post/${post.slug}`} className="block group animate-slide-up">
         <article className="bg-white rounded-3xl shadow-strong border-2 border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-700 hover:-translate-y-4 hover:border-primary-200 group-hover:scale-[1.02]">
@@ -79,7 +93,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent group-hover:from-black/60 transition-all duration-500"></div>
               <div className="absolute top-6 left-6">
-                <span 
+                <span
                   className="inline-flex items-center px-6 py-3 rounded-full text-sm font-black bg-white/95 backdrop-blur-sm shadow-medium border border-white/50 hover:scale-105 transition-transform duration-300"
                   style={{ color: post.category.color }}
                 >
@@ -90,9 +104,13 @@ const BlogCard: React.FC<BlogCardProps> = ({
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
                   <div className="flex items-center space-x-3 text-white/90">
                     <CalendarIcon className="h-4 w-4" />
-                    <span className="font-semibold">{formatDateRelative(post.publishedAt || post.createdAt)}</span>
+                    <span className="font-semibold">
+                      {formatDateRelative(post.publishedAt || post.createdAt)}
+                    </span>
                     <span>•</span>
-                    <span className="font-semibold">{t('blog.readTime', { minutes: post.readTime })}</span>
+                    <span className="font-semibold">
+                      {t("blog.readTime", { minutes: post.readTime })}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -113,7 +131,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
                       {post.author.username[0].toUpperCase()}
                     </span>
                   </div>
-                  <span className="text-lg font-black text-gray-800">{post.author.username}</span>
+                  <span className="text-lg font-black text-gray-800">
+                    {post.author.username}
+                  </span>
                 </div>
               </div>
               <div className="flex items-center space-x-6 text-gray-600">
@@ -126,11 +146,15 @@ const BlogCard: React.FC<BlogCardProps> = ({
                   ) : (
                     <HeartIcon className="h-5 w-5 group-hover/like:scale-125 transition-transform duration-300" />
                   )}
-                  <span className="font-black text-lg">{formatNumber(post.likes)}</span>
+                  <span className="font-black text-lg">
+                    {formatNumber(post.likes)}
+                  </span>
                 </button>
                 <span className="flex items-center space-x-2">
                   <ChatBubbleLeftIcon className="h-5 w-5" />
-                  <span className="font-black text-lg">{formatNumber(post.comments.length)}</span>
+                  <span className="font-black text-lg">
+                    {formatNumber(post.comments.length)}
+                  </span>
                 </span>
               </div>
             </div>
@@ -153,19 +177,19 @@ const BlogCard: React.FC<BlogCardProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-black/50 transition-all duration-500"></div>
             <div className="absolute top-4 right-4">
               <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-bold text-gray-700 shadow-soft">
-                {t('blog.readTime', { minutes: post.readTime })}
+                {t("blog.readTime", { minutes: post.readTime })}
               </div>
             </div>
           </div>
         )}
         <div className="p-7">
           <div className="flex items-center space-x-4 mb-5">
-            <span 
+            <span
               className="inline-flex items-center px-4 py-2 rounded-xl text-xs font-black shadow-soft border-2"
-              style={{ 
-                backgroundColor: post.category.color + '15', 
-                color: post.category.color, 
-                borderColor: post.category.color + '30' 
+              style={{
+                backgroundColor: post.category.color + "15",
+                color: post.category.color,
+                borderColor: post.category.color + "30",
               }}
             >
               {post.category.name}
@@ -179,9 +203,13 @@ const BlogCard: React.FC<BlogCardProps> = ({
           </p>
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-3 text-gray-600">
-              <span className="font-bold">{t('blog.by', { author: post.author.username })}</span>
+              <span className="font-bold">
+                {t("blog.by", { author: post.author.username })}
+              </span>
               <span className="text-gray-400">•</span>
-              <span className="font-semibold">{formatDateRelative(post.publishedAt || post.createdAt)}</span>
+              <span className="font-semibold">
+                {formatDateRelative(post.publishedAt || post.createdAt)}
+              </span>
             </div>
             <div className="flex items-center space-x-5 text-gray-500">
               <button

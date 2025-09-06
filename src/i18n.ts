@@ -1,8 +1,8 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import en from './locales/en.json';
-import fr from './locales/fr.json';
-import vi from './locales/vi.json';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import en from "./common/locales/en.json";
+import fr from "./common/locales/fr.json";
+import vi from "./common/locales/vi.json";
 
 const resources = {
   en: { translation: en },
@@ -10,15 +10,13 @@ const resources = {
   vi: { translation: vi },
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'vi',
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "vi",
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;
