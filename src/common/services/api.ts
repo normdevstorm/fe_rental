@@ -3,7 +3,7 @@ import { TOKENS } from "../di/tokens";
 import { container } from "../di/container";
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/";
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:8082/";
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -15,7 +15,7 @@ export const apiClient = axios.create({
 // Request interceptor to add auth token
 apiClient.interceptors.request.use(
   (config) => {
-    if (!config.url?.startsWith("/auth/")) {
+    if (!config.url?.startsWith("/login")) {
       const token = localStorage.getItem("accessToken");
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
@@ -32,7 +32,10 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
-    if (error.response?.status === 401) {
+    if (
+      error.response?.status === 401 &&
+      !error.config.url?.startsWith("/login")
+    ) {
       // Handle unauthorized access
       try {
         const authUseCase = container.get(TOKENS.authUsecase);

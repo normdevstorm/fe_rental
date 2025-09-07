@@ -18,7 +18,7 @@ class AuthApi {
   ): Promise<ApiResponse<LoginResponseModel> | null> {
     try {
       const response = await apiClient.post<ApiResponse<LoginResponseModel>>(
-        "/auth/login",
+        "/login",
         LoginRequestModel
       );
       return response.data;

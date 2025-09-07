@@ -11,7 +11,7 @@ export interface AuthState {
   //   setLoading: (loading: boolean) => void;
 }
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: "auth",
   initialState: {
     user: null,

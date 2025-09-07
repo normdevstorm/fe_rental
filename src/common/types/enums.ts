@@ -1,4 +1,4 @@
-const ItemCategory = {
+export const ItemCategory = {
   ELECTRONICS: "ELECTRONICS",
   FURNITURE: "FURNITURE",
   VEHICLES: "VEHICLES",
@@ -11,21 +11,29 @@ const ItemCategory = {
   MUSICAL_INSTRUMENTS: "MUSICAL_INSTRUMENTS",
 } as const;
 
-const AvailabilityStatus = {
+export const AvailabilityStatus = {
   AVAILABLE: "AVAILABLE",
   RENTED: "RENTED",
   MAINTENANCE: "MAINTENANCE",
   UNAVAILABLE: "UNAVAILABLE",
 } as const;
 
-const UserRole = {
+export const UserRole = {
   OWNER: "OWNER",
   RENTER: "RENTER",
   ADMIN: "ADMIN",
 } as const;
 
-// export { ItemCategory, AvailabilityStatus, UserRoleEnum };
+export const StateStatus = {
+  INITIAL: "INITIAL",
+  ISLOADING: "ISLOADING",
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
+} as const;
 
-export type ItemCategory = keyof typeof ItemCategory;
-export type AvailabilityStatus = keyof typeof AvailabilityStatus;
-export type UserRole = keyof typeof UserRole;
+// Type utilities - use these when you need just the type
+export type ItemCategoryType = (typeof ItemCategory)[keyof typeof ItemCategory];
+export type AvailabilityStatusType =
+  (typeof AvailabilityStatus)[keyof typeof AvailabilityStatus];
+export type UserRoleType = (typeof UserRole)[keyof typeof UserRole];
+export type StateStatusType = (typeof StateStatus)[keyof typeof StateStatus];

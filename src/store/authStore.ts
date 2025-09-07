@@ -1,6 +1,6 @@
-// import { create } from 'zustand';
-// import { persist } from 'zustand/middleware';
-// import type { User } from '../types';
+// import { create } from "zustand";
+// import { persist } from "zustand/middleware";
+// import type { User } from "../common/types/types";
 
 // interface AuthState {
 //   user: User | null;
@@ -29,7 +29,7 @@
 //       setLoading: (isLoading) => set({ isLoading }),
 //     }),
 //     {
-//       name: 'auth-storage',
+//       name: "auth-storage",
 //       partialize: (state) => ({
 //         user: state.user,
 //         isAuthenticated: state.isAuthenticated,

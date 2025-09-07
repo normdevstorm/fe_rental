@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { login } from "../store/slices/authSlice";
-import type { User } from "../common/types/types";
-import { useAppDispatch, useAppSelector } from "../common/hooks/redux";
+import { useAuthStore } from "../../stores/auth_store";
+import { StateStatus } from "../../../../common/types/enums";
+// import { useAppDispatch, useAppSelector } from "../../../../common/hooks/redux";
 
 const LoginPage: React.FC = () => {
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
-  const authSelector = useAppSelector((state) => state.auth);
+  // const dispatch = useAppDispatch();
+  // const authSelector = useAppSelector((state) => state.auth);
+  const { isAuthenticated, login, stateStatus, user } = useAuthStore();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,17 +21,22 @@ const LoginPage: React.FC = () => {
 
     // Mock login - in a real app, this would call an API
     setTimeout(() => {
-      const mockUser: User = {
-        id: "1",
-        username: "demo_user",
-        email: email,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-
-      dispatch(login({ email: mockUser.email, password: "12345" }));
-      navigate("/");
-      setIsLoading(false);
+      // const mockUser: User = {
+      //   id: "1",
+      //   username: "demo_user",
+      //   email: email,
+      //   createdAt: new Date().toISOString(),
+      //   updatedAt: new Date().toISOString(),
+      // };
+      login({ username: "norm_owner_3", password: "12345678" });
+      if (stateStatus === StateStatus.SUCCESS && isAuthenticated) {
+        {
+          navigate("/");
+        }
+        // dispatch(login({ email: mockUser.email, password: "12345" }));
+        // navigate("/");
+        setIsLoading(false);
+      }
     }, 1000);
   };
 

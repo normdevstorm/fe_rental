@@ -65,8 +65,8 @@ type RouteFiles = {
     id: "presentation/common/layouts/AuthLayout";
     page: "/login";
   };
-  "./pages/LoginPage.tsx": {
-    id: "pages/LoginPage";
+  "./presentation/auth/ui/pages/LoginPage.tsx": {
+    id: "presentation/auth/ui/pages/LoginPage";
     page: "/login";
   };
 };

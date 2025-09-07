@@ -17,7 +17,7 @@ export default [
     ]),
   ]),
   layout("./presentation/common/layouts/AuthLayout.tsx", [
-    route("login", "./pages/LoginPage.tsx"),
+    route("login", "./presentation/auth/ui/pages/LoginPage.tsx"),
     // route("register", "./pages/register.tsx")
   ]),
 ] satisfies RouteConfig;
