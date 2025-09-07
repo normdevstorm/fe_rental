@@ -1,13 +1,13 @@
 import type {
-  AvailabilityStatusEnum,
-  ItemCategoryEnum,
+  AvailabilityStatus,
+  ItemCategory,
 } from "../../../common/types/enums";
 import type { ItemEntity } from "../../../domain/item/entities/ItemEntity";
 
 export interface ItemResponseModel {
   id: string;
   ownerId: string;
-  category: ItemCategoryEnum;
+  category: ItemCategory;
   name: string;
   description: string;
   price: number;
@@ -16,7 +16,7 @@ export interface ItemResponseModel {
   amount: number;
   address: string;
   conditionRating: number;
-  status: AvailabilityStatusEnum;
+  status: AvailabilityStatus;
   isActive: boolean;
   createdAt: string;
   updatedAt: string;

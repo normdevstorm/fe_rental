@@ -15,6 +15,9 @@ import { toItemEntity } from "../data/item/model/item_response_model";
 import type { ItemEntity } from "../domain/item/entities/ItemEntity";
 import { itemUseCase } from "../domain/item/usecases/item_usecase";
 
+import { useInjection } from "brandi-react";
+import { TOKENS } from "../common/di/tokens";
+
 // Mock data for demo purposes
 const mockPosts: BlogPost[] = [
   {
@@ -128,6 +131,10 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     // In a real app, you would fetch from API
+    // fetchItems();
+    // login();
+    // refreshToken();
+
     fetchItems();
     setPosts(mockPosts);
     setFeaturedPosts(mockPosts.slice(0, 1));
@@ -156,7 +163,7 @@ const HomePage: React.FC = () => {
         name: "New Item",
         description: "This is a new item",
         price: 99.99,
-        createdAt: new Date().toISOString(),
+        createdAt: new Date(),
         id: "0",
         updatedAt: new Date().toISOString(),
         address: "123 Main St",
@@ -173,6 +180,32 @@ const HomePage: React.FC = () => {
       }
     } catch (error) {
       console.error("Error creating item:", error);
+    }
+  };
+
+  const authUseCase = useInjection(TOKENS.authUsecase);
+
+  const login = async () => {
+    try {
+      const loginRequest = {
+        username: "norm_owner_3",
+        password: "12345678",
+      };
+      const response = await authUseCase.login(loginRequest);
+      console.log("Login response:", localStorage.getItem("accessToken"));
+    } catch (error) {
+      console.error("Login error:", error);
+    }
+  };
+
+  const refreshToken = async () => {
+    try {
+      const response = await authUseCase.refreshToken(
+        localStorage.getItem("refreshToken") || ""
+      );
+      console.log("Refresh token response:", response);
+    } catch (error) {
+      console.error("Refresh token error:", error);
     }
   };
 

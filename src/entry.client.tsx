@@ -5,16 +5,20 @@ import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import { store } from "./store/configureStore";
+import { ContainerProvider } from "brandi-react";
 import "./i18n";
+import { container } from "./common/di/container";
 const queryClient = new QueryClient();
 
 ReactDOM.hydrateRoot(
   document,
-  <React.StrictMode>
-    <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-            <HydratedRouter/>
-      </QueryClientProvider>
-    </Provider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Provider store={store}>
+    <QueryClientProvider client={queryClient}>
+      <ContainerProvider container={container}>
+        <HydratedRouter />
+      </ContainerProvider>
+    </QueryClientProvider>
+  </Provider>
+  // </React.StrictMode>
 );

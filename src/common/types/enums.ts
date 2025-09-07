@@ -18,5 +18,14 @@ const AvailabilityStatus = {
   UNAVAILABLE: "UNAVAILABLE",
 } as const;
 
-export type ItemCategoryEnum = keyof typeof ItemCategory;
-export type AvailabilityStatusEnum = keyof typeof AvailabilityStatus;
+const UserRole = {
+  OWNER: "OWNER",
+  RENTER: "RENTER",
+  ADMIN: "ADMIN",
+} as const;
+
+// export { ItemCategory, AvailabilityStatus, UserRoleEnum };
+
+export type ItemCategory = keyof typeof ItemCategory;
+export type AvailabilityStatus = keyof typeof AvailabilityStatus;
+export type UserRole = keyof typeof UserRole;

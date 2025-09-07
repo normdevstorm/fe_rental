@@ -1,6 +1,6 @@
 import type {
-  AvailabilityStatusEnum,
-  ItemCategoryEnum,
+  AvailabilityStatus,
+  ItemCategory,
 } from "../../../common/types/enums";
 
 export interface ItemRequestModel {
@@ -9,12 +9,12 @@ export interface ItemRequestModel {
   // Request might not include this field
   //   isActive: boolean;
   createdAt: string; // ISO string for LocalDateTime
-  category: ItemCategoryEnum;
+  category: ItemCategory;
   price: number;
   latePrice: number;
   depositAmount: number;
   amount: number;
   address?: string;
   conditionRating?: number;
-  status?: AvailabilityStatusEnum; // Adjust type if you have an AvailabilityStatus enum/type
+  status?: AvailabilityStatus; // Adjust type if you have an AvailabilityStatus enum/type
 }
