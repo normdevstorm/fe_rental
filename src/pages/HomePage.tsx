@@ -12,8 +12,6 @@ import type { BlogPost } from "../common/types/types";
 import { useBlogStore } from "../store/blogStore";
 import { itemApi } from "../data/item/api/item_api";
 import { toItemEntity } from "../data/item/model/item_response_model";
-import type { ItemEntity } from "../domain/item/entities/ItemEntity";
-import { itemUseCase } from "../domain/item/usecases/item_usecase";
 
 import { useInjection } from "brandi-react";
 import { TOKENS } from "../common/di/tokens";
@@ -132,10 +130,9 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     // In a real app, you would fetch from API
     // fetchItems();
-    // login();
+    login();
     // refreshToken();
-
-    fetchItems();
+    // fetchItems();
     setPosts(mockPosts);
     setFeaturedPosts(mockPosts.slice(0, 1));
     setLatestPosts(mockPosts.slice(0, 3));
@@ -157,31 +154,31 @@ const HomePage: React.FC = () => {
     }
   };
 
-  const createItem = async () => {
-    try {
-      const itemRequest: ItemEntity = {
-        name: "New Item",
-        description: "This is a new item",
-        price: 99.99,
-        createdAt: new Date(),
-        id: "0",
-        updatedAt: new Date().toISOString(),
-        address: "123 Main St",
-        conditionRating: 5,
-        status: "AVAILABLE",
-        category: "ELECTRONICS",
-        latePrice: 10,
-        depositAmount: 20,
-        amount: 1,
-      };
-      const newItem = await itemUseCase.addItem(itemRequest);
-      if (newItem) {
-        console.log("Created item:", newItem);
-      }
-    } catch (error) {
-      console.error("Error creating item:", error);
-    }
-  };
+  // const createItem = async () => {
+  //   try {
+  //     const itemRequest: ItemEntity = {
+  //       name: "New Item",
+  //       description: "This is a new item",
+  //       price: 99.99,
+  //       createdAt: new Date(),
+  //       id: "0",
+  //       updatedAt: new Date().toISOString(),
+  //       address: "123 Main St",
+  //       conditionRating: 5,
+  //       status: "AVAILABLE",
+  //       category: "ELECTRONICS",
+  //       latePrice: 10,
+  //       depositAmount: 20,
+  //       amount: 1,
+  //     };
+  //     const newItem = await itemUseCase.addItem(itemRequest);
+  //     if (newItem) {
+  //       console.log("Created item:", newItem);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error creating item:", error);
+  //   }
+  // };
 
   const authUseCase = useInjection(TOKENS.authUsecase);
 
@@ -191,23 +188,24 @@ const HomePage: React.FC = () => {
         username: "norm_owner_3",
         password: "12345678",
       };
-      const response = await authUseCase.login(loginRequest);
+      await authUseCase.login(loginRequest);
       console.log("Login response:", localStorage.getItem("accessToken"));
+      await fetchItems();
     } catch (error) {
       console.error("Login error:", error);
     }
   };
 
-  const refreshToken = async () => {
-    try {
-      const response = await authUseCase.refreshToken(
-        localStorage.getItem("refreshToken") || ""
-      );
-      console.log("Refresh token response:", response);
-    } catch (error) {
-      console.error("Refresh token error:", error);
-    }
-  };
+  // const refreshToken = async () => {
+  //   try {
+  //     const response = await authUseCase.refreshToken(
+  //       localStorage.getItem("refreshToken") || ""
+  //     );
+  //     console.log("Refresh token response:", response);
+  //   } catch (error) {
+  //     console.error("Refresh token error:", error);
+  //   }
+  // };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary-50">

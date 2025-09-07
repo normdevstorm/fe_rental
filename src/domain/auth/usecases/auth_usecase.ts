@@ -1,6 +1,5 @@
 import { injected } from "brandi";
 import type { LoginRequestModel } from "../../../data/auth/model/request/login_request_model";
-import type { LoginResponseModel } from "../../../data/auth/model/response/login_response_model";
 import type { AuthRepository } from "../repositories/auth_repository";
 import { TOKENS } from "../../../common/di/tokens";
 import type { LoginEntity } from "../entities/session_entity";
